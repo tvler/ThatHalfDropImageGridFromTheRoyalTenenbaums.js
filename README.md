@@ -54,10 +54,21 @@ figure{
 ```
 
 ##2 Steps To Run
-##### Link the javascript file
+##### 1. Link the javascript file
 ```html
 <script
   src="ThatOffsetImageGridFromTheRoyalTenenbaums.js"
 ></script>
 ```
 *This creates the ```object_offsetImg```*
+##### 2. Set an event to update the background
+```javascript
+_offsetImg.update()
+// When a data-offset element resizes, it's background needs to update
+```
+
+*Example hook*
+```javascript
+window.onresize =
+  _offsetImg.update;
+```
