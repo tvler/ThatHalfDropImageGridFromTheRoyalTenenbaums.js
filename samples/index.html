@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title> Samples | That Offset Image Grid From The Royal Tenenbaums . Javascript</title>
+   <link rel="stylesheet" type="text/css" href="../index.css"/>
+   <style>figure,pre{padding-left: 0;}pre{margin-top: 4rem;}h4{margin-top: 1.2rem;}h2{margin-bottom: .6em;}h5{margin-top: 0;}body{padding-bottom: 0;}</style>
+   <script src="../ThatOffsetImageGridFromTheRoyalTenenbaums.js"></script>
+   <script>window.onresize = _offsetImg.update;</script>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+
+<body>
+
+<h1><a href=".">Samples</a></h1>
+
+<h2>Back to <a href="..">main page</a><br><br>
+
+Overview</h2>
+<h5><a href="#src">Setting an image URL</a></h5>
+<h5><a href="#snap">Snap</a></h5>
+<h5><a href="#dimensions">Width and height</a></h5>
+<h5><a href="#maxmin">Max/min width and height</a></h5>
+
+<h3 id="src">Setting an image URL</h3>
+
+<h4><em>•</em><i>String value</i></h4>
+<h4><em>•</em><i>Contains the image size within the element if there's no other property (Same thing as "background-size: contain")</i></h4>
+<h4><em>•</em><i>If src isn't stated, it attempts to inherit a URL from the element's background-image CSS property</i></h4>
+
+<pre>&lt;figure
+  <em>data-offset = '{</em>
+    <i>"src"</i> : "wes1.jpg"
+  <em>}</em>
+&gt;&lt;/figure&gt;</pre>
+
+<figure data-offset="../wes1.jpg"></figure>
+
+<h3 id="snap">Snap</h3>
+
+<h4><em>•</em> <i>Boolean value</i></h4>
+<h4><em>•</em> <i>Changes width of image to create a whole number of columns</i></h4>
+<h4><em>•</em><i>Only respects one min/max property</i></h4>
+<h4><em>•</em><i>If no min/max property is set, it creates 3 columns</i></h4>
+
+<pre>&lt;figure
+  <em>data-offset = '{</em>
+    <i>"src"</i>      : "wes1.jpg",
+    <i>"maxWidth"</i> : 250,
+    <i>"snap"</i>     : true
+  <em>}</em>
+&gt;&lt;/figure&gt;</pre>
+<figure data-offset='{
+   "src": "../wes1.jpg",
+   "maxWidth": "250",
+   "snap": true
+}'></figure>
+
+<pre>&lt;figure
+  <em>data-offset = '{</em>
+    <i>"src"</i>       : "wes1.jpg",
+    <i>"minHeight"</i> : 170,
+    <i>"snap"</i>      : true
+  <em>}</em>
+&gt;&lt;/figure&gt;</pre>
+<figure data-offset='{
+   "src": "../wes1.jpg",
+   "minHeight": 170,
+   "snap": true
+}'></figure>
+
+<pre>&lt;figure
+  <em>data-offset = '{</em>
+    <i>"src"</i>  : "wes1.jpg",
+    <i>"snap"</i> : true
+  <em>}</em>
+&gt;&lt;/figure&gt;</pre>
+<figure data-offset='{
+   "src": "../wes1.jpg",
+   "snap": true
+}'></figure>
+
+<h3 id="dimensions">Width and height</h3>
+<h4><em>•</em><i>[String | Double] positive value</i></h4>
+<h4><em>•</em><i>String values must end in “%” or “px”</i></h4>
+<h4><em>•</em><i>Percent values are relative to the element's same dimension (Same behavior as CSS background-size)</i></h4>
+<h4><em>•</em><i>If nothing is specified, its value is “auto”</i></h4>
+<h4><em>•</em><i>If both the width and height properties are set, the image aspect ratio changes</i></h4>
+
+<pre>&lt;figure
+  <em>data-offset = '{</em>
+    <i>"src"</i>   : "wes1.jpg",
+    <i>"width"</i> : "33.33%"
+  <em>}</em>
+&gt;&lt;/figure&gt;</pre>
+<figure data-offset='{
+   "src": "../wes1.jpg",
+   "width": "33.33%"
+}'></figure>
+
+<pre>&lt;figure
+  <em>data-offset = '{</em>
+    <i>"src"</i>    : "wes1.jpg",
+    <i>"width"</i>  : "100%",
+    <i>"height"</i> : "100%"
+  <em>}</em>
+&gt;&lt;/figure&gt;</pre>
+<figure data-offset='{
+   "src": "../wes1.jpg",
+   "width": "100%",
+   "height": "100%"
+}'></figure>
+
+<pre>&lt;figure
+  <em>data-offset = '{</em>
+    <i>"src"</i>    : "wes1.jpg",
+    <i>"width"</i>  : "100%",
+    <i>"height"</i> : "33.33%"
+  <em>}</em>
+&gt;&lt;/figure&gt;</pre>
+<figure data-offset='{
+   "src": "../wes1.jpg",
+   "width": "100%",
+   "height": "33.33%"
+}'></figure>
+
+<h3 id="maxmin">Max width/height</h3>
+
+<h4><em>•</em><i>[String | Double] positive value</i></h4>
+<h4><em>•</em><i>String values must end in “%” or “px”</i></h4>
+<h4><em>•</em><i>Percent values are relative to the element's same dimension (Same behaivior as CSS background-size)</i></h4>
+<h4><em>•</em><i>If nothing is specified, its value is “none”</i></h4>
+
+<pre>&lt;figure
+  <em>data-offset = '{</em>
+    <i>"src"</i>      : "wes1.jpg",
+    <i>"width"</i>    : "33.33%",
+    <i>"maxWidth"</i> : 150
+  <em>}</em>
+&gt;&lt;/figure&gt;</pre>
+<figure data-offset='{
+   "src": "../wes1.jpg",
+   "width": "33.33%",
+   "maxWidth": 150
+}'></figure>
+
+<pre>&lt;figure
+  <em>data-offset = '{</em>
+    <i>"src"</i>       : "wes1.jpg",
+    <i>"width"</i>     : 150,
+    <i>"minHeight"</i> : "80%"
+  <em>}</em>
+&gt;&lt;/figure&gt;</pre>
+<figure data-offset='{
+   "src": "../wes1.jpg",
+   "width": 150,
+   "minHeight": "70%"
+}'></figure>
+
+</body>
+</html>

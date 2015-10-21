@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>That Offset Image Grid From The Royal Tenenbaums . Javascript</title>
+   <link rel="stylesheet" type="text/css" href="index.css"/>
+   <script src="ThatOffsetImageGridFromTheRoyalTenenbaums.js"></script>
+   <script>window.onresize = _offsetImg.update;</script>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+
+<body>
+      <h1><a href=".">That Offset Image Grid From<br>The Royal Tenenbaums<br>. Javascript</a></h1>
+
+      <pre class="fig-markup">&lt;figure
+  <em>data-offset = &quot;wes1.jpg&quot;</em>
+&gt;&lt;/figure&gt;</pre>
+      <figure data-offset="wes1.jpg"></figure>
+
+      <blockquote>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A brand-new javascript file for repeating an HTML element's background image in a manner such that there will always be a vertically and horizontally centered image, and adjacent columns will be vertically offset by exactly one-half of the image's height.</blockquote>
+
+      <h2>Available On <a href="https://github.com/tvler">Github</a>,
+      Built By <a href="http://tylerdeitz.co/">Tyler</a><br><br>
+      View More <a href="samples">Samples</a>
+      </h2>
+
+      <h3>3 Ways To Use</h3>
+      <h4><em>1</em><i>HTML + Inline URL</i></h4>
+      <pre>&lt;figure
+  <em>data-offset = 'wes1.jpg'</em>
+&gt;&lt;/figure&gt;</pre>
+
+      <h4><em>2</em><i>HTML + CSS URL</i></h4>
+      <pre>
+figure{
+  <em>background:url('wes1.jpg')</em>
+}
+
+&lt;figure
+  <em>data-offset</em>
+&gt;&lt;/figure&gt;</pre>
+
+      <h4><em>3</em><i>HTML + JSON</i></h4>
+      <pre>&lt;figure
+  <em>data-offset = '{</em>
+    <i>"src"</i>      : "wes1.jpg",
+    <i>"width"</i>    : "20%",
+    <i>"maxWidth"</i> : 200
+  <em>}'</em>
+&gt;&lt;/figure&gt;</pre>
+
+<h5>Default values</h5>
+<pre>
+<i>&quot;src&quot;</i>       : &quot;&quot;,</pre>
+<p><code>String of the image's URL<br>
+(If not given, CSS URL will be used)</code></p><pre>
+
+<i>&quot;snap&quot;</i>      : false,</pre>
+<p><code>Changes width of image
+to create a whole number
+of columns, only respecting
+one min/max property</code></p><pre>
+
+<i>&quot;minWidth&quot;</i>  : 0,
+<i>&quot;maxWidth&quot;</i>  : "100%",
+<i>&quot;width&quot;</i>     : 0,
+<i>&quot;minHeight&quot;</i> : 0,
+<i>&quot;maxHeight&quot;</i> : "100%",
+<i>&quot;height&quot;</i>    : 0</pre>
+<p><code>Can be a number or string
+ending in 'px' or '%'</code></p>
+
+   <h3>2 Steps To Run</h3>
+
+   <h4><em>1</em><i>Link The Javascript File</i></h4>
+   <pre>&lt;script
+  <em>src="ThatOffsetImageGridFromTheRoyalTenenbaums.js"</em>
+&gt;&lt;/script&gt;</pre>
+   <h5>This creates the object<em><code style="padding-left: .8em; font-size: .8em;"><i>_offsetImg</i></code></em></h5>
+
+   <h4><em>2</em><i>Set An Event To Update The Background</i></h4>
+   <pre><em>_offsetImg.update()</em></pre>
+   <p><code>When a data-offset element resizes, it's background needs to update</code></p>
+
+   <h5>Example hook</h5>
+   <pre>window.onresize =
+  <em>_offsetImg.update;</em></pre>
+
+   <h3>Settings</h3>
+
+   <h4><em>1</em><i>Add Or Remove Data-Offset Elements</i></h4>
+   <pre><em>_offsetImg.init()</em></pre>
+   <p><code>Run this function after an element is added or removed</code></p>
+
+   <h4><em>2</em><i>Change Dafault Values</i></h4>
+   <pre><em>_offsetImg.defaultValues</em></pre>
+   <p><code>The exposed object's properties can be modified, which may reduce overall markup in some situations</code></p>
+   <p><code>If it's modified after DOMContentLoaded, run _offsetImg.init()</code></p>
+</body>
+</html>
+
+<!-- http://www.leavemethewhite.com/caps/thumbnails.php?album=117&page=7
+http://www.leavemethewhite.com/caps/displayimage.php?album=117&pid=43315#top_display_media
+http://www.leavemethewhite.com/caps/displayimage.php?album=117&pid=43342#top_display_media
+http://www.leavemethewhite.com/caps/displayimage.php?album=117&pid=43888#top_display_media
+http://www.leavemethewhite.com/caps/displayimage.php?album=117&pid=43323#top_display_media
+http://www.leavemethewhite.com/caps/displayimage.php?album=117&pid=43300#top_display_media
+http://www.leavemethewhite.com/caps/displayimage.php?album=117&pid=43247#top_display_media
+http://www.leavemethewhite.com/caps/displayimage.php?album=117&pid=43305#top_display_media
+https://www.songkick.com/concerts/24941259-homeshake-at-babys-all-right
+
+http://www.rowsdowr.com/2012/08/25/the-royal-tenenbaums-book-and-magazine-covers/ithkbta2n1axb/
+http://www.rowsdowr.com/2012/08/25/the-royal-tenenbaums-book-and-magazine-covers/ib0kkr3vzfgndm/ -->

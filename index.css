@@ -1,0 +1,153 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0;box-sizing:border-box;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+@font-face{
+   font-family: 'Source Code Pro';
+   font-weight: 400;
+   font-style: normal;
+   font-stretch: normal;
+   src: url('SourceCodePro-Regular.ttf.woff2') format('woff2'),
+        url('SourceCodePro-Regular.otf.woff') format('woff');
+}
+
+@font-face{
+   font-family: 'Source Code Pro';
+   font-weight: 400;
+   font-style: italic;
+   font-stretch: normal;
+   src: url('SourceCodePro-It.ttf.woff2') format('woff2'),
+        url('SourceCodePro-It.otf.woff') format('woff');
+}
+
+body{
+   background: rgb(44, 51, 61);
+   padding: 4em 0;
+}
+body > *{
+   margin: 0 auto;
+   max-width: 900px;
+   width: 95%;
+}
+h1, figure, h2, h3, blockquote{
+   margin-bottom: 4rem;
+}
+h1{
+   text-align: center;
+   text-transform: uppercase;
+   color: rgb(240, 216, 121);
+   width: 100%;
+   font: bold 2.6em/1.3em Futura, Helvetica, Ariel, sans-serif;
+}
+h1 a{
+   text-decoration: none;
+}
+figure{
+   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, .6);
+   margin-top: 0;
+}
+figure:before{
+   display: block;
+   padding-top: 41.5%;
+   content: '';
+}
+pre{
+   font: .9em/1.2em 'Source Code Pro', monospace;
+   /*color: rgba(210,216,225,0.4);*/
+   color: rgb(110, 116, 126);
+   display: block;
+   padding-bottom: .4em;
+   overflow: hidden;
+}
+em, p{
+   color: rgb(210, 216, 225);
+}
+h4, h5{
+   margin-bottom: 1rem;
+}
+i{
+   font-style: italic;
+   color: rgb(210, 216, 225);
+}
+blockquote{
+   max-width: 1250px;
+   font: italic 1.5em/1.2em Georgia, serif;
+   color: rgb(210,216,225);
+}
+h3{
+   max-width: 1250px;
+   font: italic bold 1.7em/1.2em Georgia, serif;
+   /*color: rgba(210,216,225,0.4);*/
+   color: rgb(110, 116, 126);
+   margin-top: 4rem;
+   border-top: 1px solid rgb(210,216,225);
+}
+h2, h4{
+   text-transform: uppercase;
+   color: rgb(210, 216, 225);
+   margin-top: 4rem;
+   font: bold 1.3em/1.3em Futura, Helvetica, Ariel, sans-serif;
+}
+h5{
+   margin-top: 2em;
+   font: italic bold 1.3em Georgia, serif;
+   /*color: rgba(210,216,225,0.4);*/
+   color: rgb(110, 116, 126);
+}
+h5 a{
+   color: inherit;
+   /*text-decoration: initial;
+   border-bottom: 2px solid;*/
+}
+p{
+   /*color: rgba(210,216,225,0.4);*/
+   color: rgb(110, 116, 126);
+   display: block;
+   margin-bottom: .4em;
+}
+code{
+   font: .9em/1.2em 'Source Code Pro', monospace;
+   max-width: 500px;
+   display: inline-block;
+}
+a{
+   color: rgb(240, 216, 121);
+}
+
+h4 > em{
+   display: table-cell;
+   width: 25px;
+   color: rgb(240, 216, 121);
+}
+h4 > i{
+   display: table-cell;
+   font-style: normal;
+}
+code, pre, h5{
+   padding-left: 25px;
+}
+.fig-markup{
+   padding-left: 0;
+}
+
+@media(max-width:775px){
+   h1{
+      font-size: 5.5vw;
+   }
+   blockquote{
+      font-size: 1.1em;
+   }
+   h2, h4{
+      font-size: 1.1em;
+   }
+   h3{
+      font-size: 1.4em;
+   }
+   h5{
+      font-size: 1.1em;
+   }
+   h4 > em{
+      width: 20px;
+   }
+   code, pre, h5{
+      padding-left: 20px;
+   }
+}
