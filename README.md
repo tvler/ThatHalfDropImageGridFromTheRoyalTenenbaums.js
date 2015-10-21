@@ -11,7 +11,7 @@ A brand-new javascript file for repeating an HTML element's background image in 
   data-offset = 'wes1.jpg'
 ></figure>
 ```
-#### 2. HTML + CSS URL
+##### 2. HTML + CSS URL
 
 ```css
 figure{
@@ -23,7 +23,7 @@ figure{
   data-offset
 ></figure>
 ```
-3. HTML + JSON
+##### 3. HTML + JSON
 ```html
 <figure
   data-offset = '{
@@ -52,3 +52,12 @@ figure{
   // Can be a number or string ending in 'px' or '%'
 }
 ```
+
+##2 Steps To Run
+##### Link the javascript file
+```html
+<script
+  src="ThatOffsetImageGridFromTheRoyalTenenbaums.js"
+></script>
+```
+*This creates the ```object_offsetImg```*
