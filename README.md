@@ -13,8 +13,8 @@ A brand-new javascript file for repeating an HTML element's background image in 
 ```
 2. HTML + CSS URL
 
- ```css
- figure{
+```css
+figure{
   background:url('wes1.jpg')
 }
 ```
