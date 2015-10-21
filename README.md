@@ -36,7 +36,7 @@ figure{
 ```
 *Default values*
 ```javascript
-{
+_offsetImg.defaultValues = {
   "src"       : "",
   // String of the image's URL
   // (If not given, CSS URL will be used)
@@ -81,7 +81,7 @@ _offsetImg.init()
 // Run this function after an element is added or removed
 ```
 
-##### 2. Change default values
+##### 2. Change [default values](https://github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js#3-html--json)
 ```javascript
 _offsetImg.defaultValues
 // The exposed object's properties can be modified, which may reduce overall markup in some situations
