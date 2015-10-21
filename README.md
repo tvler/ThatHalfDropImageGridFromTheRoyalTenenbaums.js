@@ -5,13 +5,13 @@ A brand-new javascript file for repeating an HTML element's background image in 
 ### [View webpage](http://tylerdeitz.co/ThatOffsetImageGridFromTheRoyalTenenbaums.js)
 
 ## 3 Ways To Use
-### 1. HTML + inline URL
+#### 1. HTML + inline URL
 ```html
 <figure
   data-offset = 'wes1.jpg'
 ></figure>
 ```
-### 2. HTML + CSS URL
+#### 2. HTML + CSS URL
 
 ```css
 figure{
