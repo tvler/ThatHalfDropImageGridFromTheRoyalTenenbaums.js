@@ -33,7 +33,7 @@ figure{
   }'
 ></figure>
 ```
-### Default values
+*Default values*
 ```javascript
 {
   "src"       : "",
@@ -71,4 +71,18 @@ _offsetImg.update()
 ```javascript
 window.onresize =
   _offsetImg.update;
+```
+
+##Settings
+##### 1. Add or remove ```data-offset``` elements
+```javascript
+_offsetImg.init()
+// Run this function after an element is added or removed
+```
+
+##### 2. Change default values
+```javascript
+_offsetImg.defaultValues
+// The exposed object's properties can be modified, which may reduce overall markup in some situations
+// If it's modified after DOMContentLoaded, run _offsetImg.init()
 ```
