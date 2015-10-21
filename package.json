@@ -1,22 +1,31 @@
 {
-   "name": "ThatOffsetImageGridFromTheRoyalTenenbaums.js",
-   "version": "0.0.1",
-   "description": "Repeat an HTML element's background image like that thing from that movie",
-   "main": "ThatOffsetImageGridFromTheRoyalTenenbaums.js",
-   "repository": {
-      "type": "git",
-      "url": "git@github.com:tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js.git"
-   },
-   "author": "Tyler Deitz <tylerdeitz@gmail.com>",
-   "license": "MIT",
-   "bugs": {
-      "url": "https://github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js/issues"
-   },
-   "homepage": "https://github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js",
-   "devDependencies": {
-      "uglify-js" : "latest"
-   },
-   "scripts": {
-      "start": "uglifyjs ThatOffsetImageGridFromTheRoyalTenenbaums.js > ThatOffsetImageGridFromTheRoyalTenenbaums.min.js"
-   }
+  "name": "thatoffsetimagegridfromtheroyaltenenbaums.js",
+  "version": "0.0.1",
+  "description": "Repeat an HTML element's background image like that thing from that movie",
+  "main": "ThatOffsetImageGridFromTheRoyalTenenbaums.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js.git"
+  },
+  "author": "Tyler Deitz <tylerdeitz@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js/issues"
+  },
+  "homepage": "https://github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js",
+  "devDependencies": {
+    "uglify-js": "latest"
+  },
+  "scripts": {
+    "start": "uglifyjs ThatOffsetImageGridFromTheRoyalTenenbaums.js > ThatOffsetImageGridFromTheRoyalTenenbaums.min.js"
+  },
+  "dependencies": {
+    "uglify-js": "^2.5.0"
+  },
+  "keywords": [
+    "the",
+    "royal",
+    "tenenbaums",
+    "background-image"
+  ]
 }
