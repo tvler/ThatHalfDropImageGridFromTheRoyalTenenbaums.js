@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js/issues"
   },
-  "homepage": "https://github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js",
+  "homepage": "http://tylerdeitz.co/ThatOffsetImageGridFromTheRoyalTenenbaums.js/",
   "devDependencies": {
     "uglify-js": "latest"
   },
