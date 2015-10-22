@@ -1,6 +1,6 @@
 # That Half-Drop Image Grid From <br> The Royal Tenenbaums <br> . JavaScript
 
-###[Download](https://github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js/blob/master/ThatOffsetImageGridFromTheRoyalTenenbaums.js) ([minified](https://github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js/blob/master/ThatOffsetImageGridFromTheRoyalTenenbaums.min.js))
+###[Download](ThatHalfDropImageGridFromTheRoyalTenenbaums.js) ([minified](ThatHalfDropImageGridFromTheRoyalTenenbaums.min.js))
 #### View [webpage](http://tylerdeitz.co/ThatOffsetImageGridFromTheRoyalTenenbaums.js), [more samples](http://tylerdeitz.co/ThatOffsetImageGridFromTheRoyalTenenbaums.js/samples)
 
 ![offset grid example](img/wes1-offsetexample.jpg)
