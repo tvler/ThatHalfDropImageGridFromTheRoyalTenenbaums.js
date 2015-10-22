@@ -5,7 +5,7 @@ A brand-new javascript file for repeating an HTML element's background image in 
 ###[Download](https://github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js/blob/master/ThatOffsetImageGridFromTheRoyalTenenbaums.js) ([minimized](https://github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js/blob/master/ThatOffsetImageGridFromTheRoyalTenenbaums.min.js))
 #### View [webpage](http://tylerdeitz.co/ThatOffsetImageGridFromTheRoyalTenenbaums.js), [more samples](http://tylerdeitz.co/ThatOffsetImageGridFromTheRoyalTenenbaums.js/samples)
 
-![offset grid example](https://github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js/blob/master/wes1-offsetexample.jpg)
+![offset grid example](https://github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js/blob/master/img/wes1-offsetexample.jpg)
 
 ## 3 Ways To Use
 ##### 1. HTML + inline URL
@@ -63,7 +63,7 @@ _offsetImg.defaultValues = {
   src="ThatOffsetImageGridFromTheRoyalTenenbaums.js"
 ></script>
 ```
-*This creates the ```object_offsetImg```*
+*This creates the object ```_offsetImg```*
 ##### 2. Set an event to update the background
 ```javascript
 _offsetImg.update()

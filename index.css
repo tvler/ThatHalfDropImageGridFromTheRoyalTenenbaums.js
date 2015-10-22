@@ -5,8 +5,8 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
    font-weight: 400;
    font-style: normal;
    font-stretch: normal;
-   src: url('SourceCodePro-Regular.ttf.woff2') format('woff2'),
-        url('SourceCodePro-Regular.otf.woff') format('woff');
+   src: url('fontz/SourceCodePro-Regular.ttf.woff2') format('woff2'),
+        url('fontz/SourceCodePro-Regular.otf.woff') format('woff');
 }
 
 @font-face{
@@ -14,8 +14,8 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
    font-weight: 400;
    font-style: italic;
    font-stretch: normal;
-   src: url('SourceCodePro-It.ttf.woff2') format('woff2'),
-        url('SourceCodePro-It.otf.woff') format('woff');
+   src: url('fontz/SourceCodePro-It.ttf.woff2') format('woff2'),
+        url('fontz/SourceCodePro-It.otf.woff') format('woff');
 }
 
 body{
