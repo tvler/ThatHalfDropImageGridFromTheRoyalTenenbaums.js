@@ -5,7 +5,7 @@
 
 ![offset grid example](img/wes1-offsetexample.jpg)
 
-A brand-new JavaScript file for repeating an HTML element's background image in a half-drop pattern, like that thing from that movie. Each pattern is extensively customizable through JSON data attributes, with properties based off CSS naming standards.
+A brand-new JavaScript file for repeating an HTML element's background image in a half-drop pattern with a vertically and horizontally centered image, like that thing from that movie. Each pattern is extensively customizable through JSON data attributes, with properties based off CSS naming standards.
 
 ## 3 Ways To Use
 ##### 1. HTML + inline URL
