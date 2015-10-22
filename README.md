@@ -5,7 +5,7 @@ A brand-new JavaScript file for repeating an HTML element's background image in 
 ###[Download](https://github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js/blob/master/ThatOffsetImageGridFromTheRoyalTenenbaums.js) ([minified](https://github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js/blob/master/ThatOffsetImageGridFromTheRoyalTenenbaums.min.js))
 #### View [webpage](http://tylerdeitz.co/ThatOffsetImageGridFromTheRoyalTenenbaums.js), [more samples](http://tylerdeitz.co/ThatOffsetImageGridFromTheRoyalTenenbaums.js/samples)
 
-![offset grid example](./img/wes1-offsetexample.jpg)
+![offset grid example](img/wes1-offsetexample.jpg)
 
 ## 3 Ways To Use
 ##### 1. HTML + inline URL
