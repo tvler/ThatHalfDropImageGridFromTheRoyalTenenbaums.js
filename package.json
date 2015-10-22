@@ -1,7 +1,7 @@
 {
   "name": "thatoffsetimagegridfromtheroyaltenenbaums.js",
   "version": "0.0.1",
-  "description": "Repeat an HTML element's background image like that thing from that movie",
+  "description": "Repeat an HTML element's background image in a centered half-drop pattern, like that thing from that movie",
   "main": "ThatHalfDropImageGridFromTheRoyalTenenbaums.js",
   "repository": {
     "type": "git",
