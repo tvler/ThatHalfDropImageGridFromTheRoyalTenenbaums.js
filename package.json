@@ -5,14 +5,14 @@
   "main": "ThatHalfDropImageGridFromTheRoyalTenenbaums.js",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js.git"
+    "url": "git+ssh://git@github.com/tvler/ThatHalfDropImageGridFromTheRoyalTenenbaums.js.git"
   },
   "author": "Tyler Deitz <tylerdeitz@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js/issues"
+    "url": "https://github.com/tvler/ThatHalfDropImageGridFromTheRoyalTenenbaums.js/issues"
   },
-  "homepage": "http://tylerdeitz.co/ThatOffsetImageGridFromTheRoyalTenenbaums.js/",
+  "homepage": "http://tylerdeitz.co/ThatHalfDropImageGridFromTheRoyalTenenbaums.js",
   "devDependencies": {
     "uglify-js": "latest"
   },
@@ -24,6 +24,6 @@
     "royal",
     "tenenbaums",
     "background-image",
-    "half-drop"
+    "half-drop",
   ]
 }

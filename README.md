@@ -1,7 +1,7 @@
 # That Half-Drop Image Grid From <br> The Royal Tenenbaums <br> . JavaScript
 
 ###[Download](ThatHalfDropImageGridFromTheRoyalTenenbaums.js) ([minified](ThatHalfDropImageGridFromTheRoyalTenenbaums.min.js))
-#### View [webpage](http://tylerdeitz.co/ThatOffsetImageGridFromTheRoyalTenenbaums.js), [more samples](http://tylerdeitz.co/ThatOffsetImageGridFromTheRoyalTenenbaums.js/samples)
+#### View [webpage](http://tylerdeitz.co/ThatHalfDropImageGridFromTheRoyalTenenbaums.js), [more samples](http://tylerdeitz.co/ThatHalfDropImageGridFromTheRoyalTenenbaums.js/samples)
 
 ![offset grid example](img/wes1-offsetexample.jpg)
 
@@ -60,7 +60,7 @@ _halfdrop.defaultValues = {
 ##### 1. Link the javascript file
 ```html
 <script
-  src="ThatOffsetImageGridFromTheRoyalTenenbaums.js"
+  src="ThatHalfDropImageGridFromTheRoyalTenenbaums.js"
 ></script>
 ```
 *This creates the object ```_halfdrop```*
@@ -83,7 +83,7 @@ _halfdrop.init()
 // Run this function after an element is added or removed
 ```
 
-##### 2. Change [default values](https://github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js#3-html--json)
+##### 2. Change [default values](#3-html--json)
 ```javascript
 _halfdrop.defaultValues
 // The exposed object's properties can be modified, which may reduce overall markup in some situations
