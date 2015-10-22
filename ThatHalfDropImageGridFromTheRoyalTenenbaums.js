@@ -1,10 +1,10 @@
 'use strict';
 
-var _offsetImg = {};
+var _halfdrop = {};
 
 // variables
 //
-_offsetImg.defaultValues = {
+_halfdrop.defaultValues = {
    // "public"
    src         : '',
    snap        : false,
@@ -24,18 +24,18 @@ _offsetImg.defaultValues = {
 
 // initializing and first update
 //
-_offsetImg.init = function(){
+_halfdrop.init = function(){
 
-   _offsetImg.offs     = document.querySelectorAll('[data-offset]');
-   _offsetImg.imgs     = [];
-   _offsetImg.settings = [];
+   _halfdrop.offs     = document.querySelectorAll('[data-halfdrop]');
+   _halfdrop.imgs     = [];
+   _halfdrop.settings = [];
 
    for(var j=0; j<this.offs.length; j++){
 
       // local vars
       //
       var off      = this.offs[j],
-          elemSettings = off.getAttribute('data-offset'),
+          elemSettings = off.getAttribute('data-halfdrop'),
           img      = new Image(),
 
           //deep, private clone of the default values
@@ -108,7 +108,7 @@ _offsetImg.init = function(){
       // creating each element's associated image object
       //
       img.setAttribute('data-index', j);
-      img.onload = _offsetImg.paintBack;
+      img.onload = _halfdrop.paintBack;
       img.src = this.settings[j].src;
       this.imgs.push(img);
    }
@@ -116,21 +116,21 @@ _offsetImg.init = function(){
 
 // updating image positions
 //
-_offsetImg.update = function(){
-   for(var j=0, off, img; j<_offsetImg.offs.length; j++){
-      _offsetImg.imgs[j].onload();
+_halfdrop.update = function(){
+   for(var j=0, off, img; j<_halfdrop.offs.length; j++){
+      _halfdrop.imgs[j].onload();
    }
 }
 
 // painting an element's background
 //
-_offsetImg.paintBack = function(){
+_halfdrop.paintBack = function(){
 
    // locar vars
    //
    var index    = parseInt(this.getAttribute('data-index')),
-       elem     = _offsetImg.offs[index],
-       settings = _offsetImg.settings[index],
+       elem     = _halfdrop.offs[index],
+       settings = _halfdrop.settings[index],
        elemW    = elem.offsetWidth,
        elemH    = elem.offsetHeight,
        url      = 'url("'+this.src+'") repeat-y ',
@@ -162,26 +162,26 @@ _offsetImg.paintBack = function(){
    // **
       if(settings.keepRatio){
          if(settings.width){
-            imgW = _offsetImg.parseInput(settings.width, elemW);
+            imgW = _halfdrop.parseInput(settings.width, elemW);
             imgH = imgW / settings.ratio;
          }
          else if(settings.height){
-            imgH = _offsetImg.parseInput(settings.height, elemH);
+            imgH = _halfdrop.parseInput(settings.height, elemH);
             imgW = imgH * settings.ratio;
          }
-         if(settings.minWidth && imgW < (size = _offsetImg.parseInput(settings.minWidth, elemW))){
+         if(settings.minWidth && imgW < (size = _halfdrop.parseInput(settings.minWidth, elemW))){
             imgW = size;
             imgH = imgW / settings.ratio;
          }
-         if(settings.minHeight && imgH < (size = _offsetImg.parseInput(settings.minHeight, elemH))){
+         if(settings.minHeight && imgH < (size = _halfdrop.parseInput(settings.minHeight, elemH))){
             imgH = size;
             imgW = imgH * settings.ratio;
          }
-         if(settings.maxWidth && imgW > (size = _offsetImg.parseInput(settings.maxWidth, elemW))){
+         if(settings.maxWidth && imgW > (size = _halfdrop.parseInput(settings.maxWidth, elemW))){
             imgW = size;
             imgH = imgW / settings.ratio;
          }
-         if(settings.maxHeight && imgH > (size = _offsetImg.parseInput(settings.maxHeight, elemH))){
+         if(settings.maxHeight && imgH > (size = _halfdrop.parseInput(settings.maxHeight, elemH))){
             imgH = size;
             imgW = imgH * settings.ratio;
          }
@@ -191,18 +191,18 @@ _offsetImg.paintBack = function(){
    // ** aka if width AND height has been declared
    // **
       else{
-         imgW = _offsetImg.parseInput(settings.width, elemW);
-         imgH = _offsetImg.parseInput(settings.height, elemH);
-         if(settings.minWidth && imgW < (size = _offsetImg.parseInput(settings.minWidth, elemW))){
+         imgW = _halfdrop.parseInput(settings.width, elemW);
+         imgH = _halfdrop.parseInput(settings.height, elemH);
+         if(settings.minWidth && imgW < (size = _halfdrop.parseInput(settings.minWidth, elemW))){
             imgW = size;
          }
-         if(settings.minHeight && imgH < (size = _offsetImg.parseInput(settings.minHeight, elemH))){
+         if(settings.minHeight && imgH < (size = _halfdrop.parseInput(settings.minHeight, elemH))){
             imgH = size;
          }
-         if(settings.maxWidth && imgW > (size = _offsetImg.parseInput(settings.maxWidth, elemW))){
+         if(settings.maxWidth && imgW > (size = _halfdrop.parseInput(settings.maxWidth, elemW))){
             imgW = size;
          }
-         if(settings.maxHeight && imgH > (size = _offsetImg.parseInput(settings.maxHeight, elemH))){
+         if(settings.maxHeight && imgH > (size = _halfdrop.parseInput(settings.maxHeight, elemH))){
             imgH = size;
          }
       }
@@ -214,42 +214,42 @@ _offsetImg.paintBack = function(){
          // if both max width/height are set, choose the smallest constraint
          //
          if(settings.maxWidth && settings.maxHeight){
-            var snapWidth = Math.min(_offsetImg.parseInput(settings.maxWidth, elemW), _offsetImg.parseInput(settings.maxHeight, elemH) * settings.ratio);
+            var snapWidth = Math.min(_halfdrop.parseInput(settings.maxWidth, elemW), _halfdrop.parseInput(settings.maxHeight, elemH) * settings.ratio);
             var floorOrCeil = Math.ceil;
          }
 
          // if max width is set
          //
          else if(settings.maxWidth){
-            var snapWidth = _offsetImg.parseInput(settings.maxWidth, elemW);
+            var snapWidth = _halfdrop.parseInput(settings.maxWidth, elemW);
             var floorOrCeil = Math.ceil;
          }
 
          //if max height is set
          //
          else if(settings.maxHeight){
-            var snapWidth   = _offsetImg.parseInput(settings.maxHeight, elemH) * settings.ratio;
+            var snapWidth   = _halfdrop.parseInput(settings.maxHeight, elemH) * settings.ratio;
             var floorOrCeil = Math.ceil;
          }
 
          // if both min width/height are set, choose the largest constraint
          //
          else if(settings.minWidth && settings.minHeight){
-            var snapWidth   = Math.max(_offsetImg.parseInput(settings.minWidth, elemW), _offsetImg.parseInput(settings.minHeight, elemH) * settings.ratio);
+            var snapWidth   = Math.max(_halfdrop.parseInput(settings.minWidth, elemW), _halfdrop.parseInput(settings.minHeight, elemH) * settings.ratio);
             var floorOrCeil = Math.floor;
          }
 
          // if min width is set
          //
          else if(settings.minWidth){
-            var snapWidth   = _offsetImg.parseInput(settings.minWidth, elemW);
+            var snapWidth   = _halfdrop.parseInput(settings.minWidth, elemW);
             var floorOrCeil = Math.floor;
          }
 
          // if min height is set
          //
          else if(settings.minHeight){
-            var snapWidth   = _offsetImg.parseInput(settings.minHeight, elemH) * settings.ratio;
+            var snapWidth   = _halfdrop.parseInput(settings.minHeight, elemH) * settings.ratio;
             var floorOrCeil = Math.floor;
          }
 
@@ -291,12 +291,13 @@ _offsetImg.paintBack = function(){
    }
    style += 'url("'+this.src+'") repeat '+(center)+'px 50%' + vert;
    style = style.slice(0,-2);
+
    elem.style.background = style;
 }
 
 // extend settings object (via github.com/cferdinandi/smooth-scroll/blob/master/src/js/smooth-scroll.js)
 //
-_offsetImg.extend = function () {
+_halfdrop.extend = function () {
 
    // local vars
    //
@@ -337,7 +338,7 @@ _offsetImg.extend = function () {
    return extended;
 }
 
-_offsetImg.parseInput = function(inp, elemW){
+_halfdrop.parseInput = function(inp, elemW){
    var unit = 'px';
    var num  = parseFloat(inp);
 
@@ -357,10 +358,10 @@ _offsetImg.parseInput = function(inp, elemW){
 }
 
 if(document.readyState !== 'loading'){
-   _offsetImg.init();
+   _halfdrop.init();
 }
 else{
    document.addEventListener("DOMContentLoaded", function() {
-      _offsetImg.init();
+      _halfdrop.init();
    });
 }

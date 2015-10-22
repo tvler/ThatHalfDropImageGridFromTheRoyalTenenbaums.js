@@ -2,22 +2,22 @@
 <html>
 <head>
    <meta charset="UTF-8">
-   <title>That Offset Image Grid From The Royal Tenenbaums . Javascript</title>
+   <title>That Half-Drop Image Grid From The Royal Tenenbaums . JavaScript</title>
    <link rel="stylesheet" type="text/css" href="index.css"/>
-   <script src="ThatOffsetImageGridFromTheRoyalTenenbaums.min.js"></script>
-   <script>window.onresize = _offsetImg.update;</script>
+   <script src="ThatHalfDropImageGridFromTheRoyalTenenbaums.js"></script>
+   <script>window.onresize = _halfdrop.update;</script>
    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </head>
 
 <body>
-      <h1><a href=".">That Offset Image Grid From<br>The Royal Tenenbaums<br>. Javascript</a></h1>
+      <h1><a href=".">That Half-Drop Image Grid From<br>The Royal Tenenbaums<br>. JavaScript</a></h1>
 
       <pre class="fig-markup">&lt;figure
-  <em>data-offset = &quot;wes1.jpg&quot;</em>
+  <em>data-halfdrop = &quot;wes1.jpg&quot;</em>
 &gt;&lt;/figure&gt;</pre>
-      <figure data-offset="img/wes1.jpg"></figure>
+      <figure data-halfdrop="img/wes1.jpg"></figure>
 
-      <blockquote>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A brand-new javascript file for repeating an HTML element's background image in a manner such that there will always be a vertically and horizontally centered image, and adjacent columns will be vertically offset by exactly one-half of the image's height.</blockquote>
+      <blockquote>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A brand-new JavaScript file for repeating an HTML element's background image in a half-drop pattern, like that thing from that movie. Each pattern is extensively customizable through JSON data attributes, with properties based off CSS naming standards.</blockquote>
 
       <h2>Available On <a href="https://github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js">Github</a>,
       Built By <a href="http://tylerdeitz.co/">Tyler</a><br><br>
@@ -27,7 +27,7 @@
       <h3>3 Ways To Use</h3>
       <h4><em>1</em><i>HTML + Inline URL</i></h4>
       <pre>&lt;figure
-  <em>data-offset = 'wes1.jpg'</em>
+  <em>data-halfdrop = 'wes1.jpg'</em>
 &gt;&lt;/figure&gt;</pre>
 
       <h4><em>2</em><i>HTML + CSS URL</i></h4>
@@ -37,12 +37,12 @@ figure{
 }
 
 &lt;figure
-  <em>data-offset</em>
+  <em>data-halfdrop</em>
 &gt;&lt;/figure&gt;</pre>
 
       <h4><em>3</em><i>HTML + JSON</i></h4>
       <pre>&lt;figure
-  <em>data-offset = '{</em>
+  <em>data-halfdrop = '{</em>
     <i>"src"</i>      : "wes1.jpg",
     <i>"width"</i>    : "20%",
     <i>"maxWidth"</i> : 200
@@ -74,27 +74,27 @@ ending in 'px' or '%'</code></p>
 
    <h4><em>1</em><i>Link The Javascript File</i></h4>
    <pre>&lt;script
-  <em>src="ThatOffsetImageGridFromTheRoyalTenenbaums.js"</em>
+  <em>src="ThatHalfDropImageGridFromTheRoyalTenenbaums.js"</em>
 &gt;&lt;/script&gt;</pre>
-   <h5>This creates the object<em><code style="padding-left: .8em; font-size: .8em;"><i>_offsetImg</i></code></em></h5>
+   <h5>This creates the object<em><code style="padding-left: .8em; font-size: .8em;"><i>_halfdrop</i></code></em></h5>
 
    <h4><em>2</em><i>Set An Event To Update The Background</i></h4>
-   <pre><em>_offsetImg.update()</em></pre>
-   <p><code>When a data-offset element resizes, it's background needs to update</code></p>
+   <pre><em>_halfdrop.update()</em></pre>
+   <p><code>When a data-halfdrop element resizes, it's background needs to update</code></p>
 
    <h5>Example hook</h5>
    <pre>window.onresize =
-  <em>_offsetImg.update;</em></pre>
+  <em>_halfdrop.update;</em></pre>
 
    <h3>Settings</h3>
 
-   <h4><em>1</em><i>Add Or Remove Data-Offset Elements</i></h4>
-   <pre><em>_offsetImg.init()</em></pre>
+   <h4><em>1</em><i>Add Or Remove data-halfdrop Elements</i></h4>
+   <pre><em>_halfdrop.init()</em></pre>
    <p><code>Run this function after an element is added or removed</code></p>
 
    <h4><em>2</em><i>Change Dafault Values</i></h4>
-   <pre><em>_offsetImg.defaultValues</em></pre>
+   <pre><em>_halfdrop.defaultValues</em></pre>
    <p><code>The exposed object's properties can be modified, which may reduce overall markup in some situations</code></p>
-   <p><code>If it's modified after DOMContentLoaded, run _offsetImg.init()</code></p>
+   <p><code>If it's modified after DOMContentLoaded, run _halfdrop.init()</code></p>
 </body>
 </html>

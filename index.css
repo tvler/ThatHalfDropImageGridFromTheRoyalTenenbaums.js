@@ -88,7 +88,8 @@ h2, h4{
 }
 h5{
    margin-top: 2em;
-   font: italic bold 1.3em Georgia, serif;
+   /*font: italic bold 1.3em Georgia, serif;*/
+   font: italic 1.3em Futura, Helvetica, Ariel, sans-serif;
    /*color: rgba(210,216,225,0.4);*/
    color: rgb(110, 116, 126);
 }
