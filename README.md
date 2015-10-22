@@ -38,7 +38,7 @@ figure{
 ```
 *Default values*
 ```javascript
-_offsetImg.defaultValues = {
+_halfdrop.defaultValues = {
   "src"       : "",
   // String of the image's URL
   // (If not given, CSS URL will be used)
@@ -63,29 +63,29 @@ _offsetImg.defaultValues = {
   src="ThatOffsetImageGridFromTheRoyalTenenbaums.js"
 ></script>
 ```
-*This creates the object ```_offsetImg```*
+*This creates the object ```_halfdrop```*
 ##### 2. Set an event to update the background
 ```javascript
-_offsetImg.update()
+_halfdrop.update()
 // When a data-halfdrop element resizes, it's background needs to update
 ```
 
 *Example hook*
 ```javascript
 window.onresize =
-  _offsetImg.update;
+  _halfdrop.update;
 ```
 
 ##Settings
 ##### 1. Add or remove ```data-halfdrop``` elements
 ```javascript
-_offsetImg.init()
+_halfdrop.init()
 // Run this function after an element is added or removed
 ```
 
 ##### 2. Change [default values](https://github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js#3-html--json)
 ```javascript
-_offsetImg.defaultValues
+_halfdrop.defaultValues
 // The exposed object's properties can be modified, which may reduce overall markup in some situations
-// If it's modified after DOMContentLoaded, run _offsetImg.init()
+// If it's modified after DOMContentLoaded, run _halfdrop.init()
 ```
