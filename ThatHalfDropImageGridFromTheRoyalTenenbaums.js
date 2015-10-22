@@ -279,7 +279,7 @@ _halfdrop.paintBack = function(){
    // creating local vars that depend on the conditional settings
    //
    var vert   = ' / '+imgW+'px '+imgH+'px, ',
-       center = (elemW - imgW) / 2,
+       center = Math.ceil((elemW - imgW) / 2),
        amount = Math.floor(Math.ceil(elemW / imgW) / 2),
        i      = 1,
        rows   = 2*amount + 1,
