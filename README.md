@@ -1,4 +1,4 @@
-# That Offset Image Grid From <br> The <br> Royal Tenenbaums <br> . javascript
+# That Offset Image Grid From <br> The Royal Tenenbaums <br> . javascript
 
 A brand-new javascript file for repeating an HTML element's background image in a manner such that there will always be a vertically and horizontally centered image, and adjacent columns will be vertically offset by exactly one-half of the image's height.
 
