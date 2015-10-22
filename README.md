@@ -1,17 +1,17 @@
-# That Offset Image Grid From <br> The Royal Tenenbaums <br> . Javascript
+# That Half-Drop Image Grid From <br> The Royal Tenenbaums <br> . JavaScript
 
-A brand-new javascript file for repeating an HTML element's background image in a manner such that there will always be a vertically and horizontally centered image, and adjacent columns will be vertically offset by exactly one-half of the image's height.
+A brand-new JavaScript file for repeating an HTML element's background image in a half-drop pattern, like that thing from that movie. Each pattern is extensively customizable through JSON data attributes, with properties based off CSS naming standards.
 
 ###[Download](https://github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js/blob/master/ThatOffsetImageGridFromTheRoyalTenenbaums.js) ([minified](https://github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js/blob/master/ThatOffsetImageGridFromTheRoyalTenenbaums.min.js))
 #### View [webpage](http://tylerdeitz.co/ThatOffsetImageGridFromTheRoyalTenenbaums.js), [more samples](http://tylerdeitz.co/ThatOffsetImageGridFromTheRoyalTenenbaums.js/samples)
 
-![offset grid example](https://github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js/blob/master/img/wes1-offsetexample.jpg)
+![offset grid example](./img/wes1-offsetexample.jpg)
 
 ## 3 Ways To Use
 ##### 1. HTML + inline URL
 ```html
 <figure
-  data-offset = 'wes1.jpg'
+  data-halfdrop = 'wes1.jpg'
 ></figure>
 ```
 ##### 2. HTML + CSS URL
@@ -23,13 +23,13 @@ figure{
 ```
 ```html
 <figure
-  data-offset
+  data-halfdrop
 ></figure>
 ```
 ##### 3. HTML + JSON
 ```html
 <figure
-  data-offset = '{
+  data-halfdrop = '{
     "src"      : "wes1.jpg",
     "width"    : "20%",
     "maxWidth" : 200
@@ -67,7 +67,7 @@ _offsetImg.defaultValues = {
 ##### 2. Set an event to update the background
 ```javascript
 _offsetImg.update()
-// When a data-offset element resizes, it's background needs to update
+// When a data-halfdrop element resizes, it's background needs to update
 ```
 
 *Example hook*
@@ -77,7 +77,7 @@ window.onresize =
 ```
 
 ##Settings
-##### 1. Add or remove ```data-offset``` elements
+##### 1. Add or remove ```data-halfdrop``` elements
 ```javascript
 _offsetImg.init()
 // Run this function after an element is added or removed
