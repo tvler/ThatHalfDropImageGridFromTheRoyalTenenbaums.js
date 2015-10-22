@@ -19,9 +19,6 @@
   "scripts": {
     "start": "uglifyjs ThatOffsetImageGridFromTheRoyalTenenbaums.js > ThatOffsetImageGridFromTheRoyalTenenbaums.min.js"
   },
-  "dependencies": {
-    "uglify-js": "^2.5.0"
-  },
   "keywords": [
     "the",
     "royal",
