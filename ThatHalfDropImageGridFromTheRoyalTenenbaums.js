@@ -26,19 +26,20 @@ _halfdrop.defaultValues = {
 //
 _halfdrop.init = function(){
 
-   _halfdrop.offs     = document.querySelectorAll('[data-halfdrop]');
-   _halfdrop.imgs     = [];
-   _halfdrop.settings = [];
+   _halfdrop.elems     = document.querySelectorAll('[data-halfdrop]');
+   _halfdrop.imgs      = [];
+   _halfdrop.settings  = [];
 
-   for(var j=0; j<this.offs.length; j++){
+   for(var j=0; j<this.elems.length; j++){
 
       // local vars
       //
-      var off      = this.offs[j],
-          elemSettings = off.getAttribute('data-halfdrop'),
-          img      = new Image(),
+      var elem         = this.elems[j],
+          elemSettings = elem.getAttribute('data-halfdrop'),
+          img          = new Image(),
 
           //deep, private clone of the default values
+          //
           defVals  = this.extend( this.defaultValues, {} );
 
       // reading an element's settings
@@ -49,13 +50,13 @@ _halfdrop.init = function(){
          if(!elemSettings){
             defVals.maxWidth = defVals.maxHeight = '100%';
             this.settings[j] = this.extend( defVals, {} );
-            this.settings[j].src = (off.style.backgroundImage || window.getComputedStyle(off, null).backgroundImage);
+            this.settings[j].src = (elem.style.backgroundImage || window.getComputedStyle(elem, null).backgroundImage);
 
             // replacing that url('') syntax madness
             //
             this.settings[j].src = this.settings[j].src.replace('url(','').replace(')','').replace("'","").replace('"','').replace("'","").replace('"','');
 
-            off.style.background = '';
+            elem.style.background = '';
          }
 
          // ** if an attribute is a JSON object
@@ -65,12 +66,14 @@ _halfdrop.init = function(){
 
             // if ANY dimension properties have been set,
             // REMOVE the default max width/height from the temporary clone of defaultValues
+            //
             if(elemSettings.minWidth || elemSettings.maxWidth || elemSettings.width ||
                elemSettings.minHeight || elemSettings.maxHeight || elemSettings.height ||
                elemSettings.snap) {
 
                // override the default maxWidth and maxHeight values
                // ONLY if they haven't been manually set as default values
+               //
                if(defVals.maxWidth  === -1) defVals.maxWidth  = 0;
                if(defVals.maxHeight === -1) defVals.maxHeight = 0;
             }
@@ -117,7 +120,7 @@ _halfdrop.init = function(){
 // updating image positions
 //
 _halfdrop.update = function(){
-   for(var j=0, off, img; j<_halfdrop.offs.length; j++){
+   for(var j=0; j<_halfdrop.elems.length; j++){
       _halfdrop.imgs[j].onload();
    }
 }
@@ -129,7 +132,7 @@ _halfdrop.paintBack = function(){
    // locar vars
    //
    var index    = parseInt(this.getAttribute('data-index')),
-       elem     = _halfdrop.offs[index],
+       elem     = _halfdrop.elems[index],
        settings = _halfdrop.settings[index],
        elemW    = elem.offsetWidth,
        elemH    = elem.offsetHeight,
