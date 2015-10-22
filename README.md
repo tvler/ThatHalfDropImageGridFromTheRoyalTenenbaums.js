@@ -1,6 +1,4 @@
-# ThatOffsetImageGridFrom
-# TheRoyalTenenbaums
-# .javascript
+# ThatOffsetImageGridFrom <br> TheRoyalTenenbaums <br> .javascript
 
 A brand-new javascript file for repeating an HTML element's background image in a manner such that there will always be a vertically and horizontally centered image, and adjacent columns will be vertically offset by exactly one-half of the image's height.
 
