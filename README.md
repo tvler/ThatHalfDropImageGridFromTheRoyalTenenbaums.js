@@ -2,7 +2,7 @@
 
 A brand-new javascript file for repeating an HTML element's background image in a manner such that there will always be a vertically and horizontally centered image, and adjacent columns will be vertically offset by exactly one-half of the image's height.
 
-###[Download](https://github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js/blob/master/ThatOffsetImageGridFromTheRoyalTenenbaums.js) ([minimized](https://github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js/blob/master/ThatOffsetImageGridFromTheRoyalTenenbaums.min.js))
+###[Download](https://github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js/blob/master/ThatOffsetImageGridFromTheRoyalTenenbaums.js) ([minified](https://github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js/blob/master/ThatOffsetImageGridFromTheRoyalTenenbaums.min.js))
 #### View [webpage](http://tylerdeitz.co/ThatOffsetImageGridFromTheRoyalTenenbaums.js), [more samples](http://tylerdeitz.co/ThatOffsetImageGridFromTheRoyalTenenbaums.js/samples)
 
 ![offset grid example](https://github.com/tvler/ThatOffsetImageGridFromTheRoyalTenenbaums.js/blob/master/img/wes1-offsetexample.jpg)
