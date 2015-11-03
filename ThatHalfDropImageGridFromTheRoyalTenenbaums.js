@@ -37,6 +37,7 @@ _halfdrop.init = function(){
       var elem         = this.elems[j],
           elemSettings = elem.getAttribute('data-halfdrop'),
           img          = new Image(),
+          settings     = this.settings,
 
           //deep, private clone of the default values
           //
@@ -49,14 +50,7 @@ _halfdrop.init = function(){
       // **
          if(!elemSettings){
             defVals.maxWidth = defVals.maxHeight = '100%';
-            this.settings[j] = this.extend( defVals, {} );
-            this.settings[j].src = (elem.style.backgroundImage || window.getComputedStyle(elem, null).backgroundImage);
-
-            // replacing that url('') syntax madness
-            //
-            this.settings[j].src = this.settings[j].src.replace('url(','').replace(')','').replace("'","").replace('"','').replace("'","").replace('"','');
-
-            elem.style.background = '';
+            settings[j]      = this.extend( defVals, {} );
          }
 
          // ** if an attribute is a JSON object
@@ -85,34 +79,43 @@ _halfdrop.init = function(){
                defVals.maxWidth = defVals.maxHeight = '100%';
             }
 
-            this.settings[j] = this.extend( defVals, elemSettings || {} );
-            if(!this.settings[j].src){
-               this.settings[j].src.replace('url(','').replace(')','').replace("'","").replace('"','').replace("'","").replace('"','');
-            }
+            settings[j] = this.extend( defVals, elemSettings || {} );
          }
 
       // ** else, the attribute data is only the image file
       // **
          else{
             defVals.maxWidth = defVals.maxHeight = '100%';
-            this.settings[j] = this.extend( defVals, {} );
-            this.settings[j].src = elemSettings;
+            settings[j] = this.extend( defVals, {} );
+            settings[j].src = elemSettings;
          }
 
       //
       // end of reading the settings
 
+      // if the src isn't given, inherit from inline or css
+      //
+      if(!settings[j].src){
+         settings[j].src  = (elem.style.backgroundImage || window.getComputedStyle(elem, null).backgroundImage);
+
+         // replacing that url('') syntax madness
+         //
+         settings[j].src = settings[j].src.replace('url(','').replace(')','').replace("'","").replace('"','').replace("'","").replace('"','');
+
+         elem.style.background = '';
+      }
+
       // checking if natural image ratio will be kept
       //
-      if(this.settings[j].width && this.settings[j].height){
-         this.settings[j].keepRatio = false;
+      if(settings[j].width && settings[j].height){
+         settings[j].keepRatio = false;
       }
 
       // creating each element's associated image object
       //
       img.setAttribute('data-index', j);
       img.onload = _halfdrop.paintBack;
-      img.src = this.settings[j].src;
+      img.src = settings[j].src;
       this.imgs.push(img);
    }
 }
