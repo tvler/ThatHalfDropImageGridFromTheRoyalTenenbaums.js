@@ -345,19 +345,23 @@ _halfdrop.extend = function () {
 }
 
 _halfdrop.parseInput = function(inp, elemDim){
-   var unit;
-   var num  = parseFloat(inp);
+   var num;
 
    // if there is a unit at the end of the inp string
    //
    if(isNaN(inp)){
-      unit = ( inp.match(/(%|px)$/)||["px"] ) [0];
+      num =  parseFloat(inp);
+
+      // if unit is a percentage
+      //
+      if( ( inp.match(/(%|px)$/)||["px"] ) [0] === '%'){
+         num *= elemDim / 100;
+      }
    }
 
-   // if unit is a percentage
-   //
-   if(unit === '%'){
-      num *= elemDim / 100;
+   // else, if the value is just a number then don't do anything
+   else{
+      num = inp;
    }
 
    return num;
