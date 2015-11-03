@@ -341,20 +341,20 @@ _halfdrop.extend = function () {
    return extended;
 }
 
-_halfdrop.parseInput = function(inp, elemW){
-   var unit = 'px';
+_halfdrop.parseInput = function(inp, elemDim){
+   var unit;
    var num  = parseFloat(inp);
 
-   // if there is a unit at the end of the in string
+   // if there is a unit at the end of the inp string
    //
    if(isNaN(inp)){
-      var unit = (inp.match(/(%|px)$/)||["px"])[0];
+      unit = ( inp.match(/(%|px)$/)||["px"] ) [0];
    }
 
    // if unit is a percentage
    //
    if(unit === '%'){
-      num *= elemW / 100;
+      num *= elemDim / 100;
    }
 
    return num;
