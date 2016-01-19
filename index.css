@@ -79,7 +79,7 @@ h3{
    /*color: rgba(210,216,225,0.4);*/
    color: rgb(110, 116, 126);
    margin-top: 4rem;
-   border-top: 1px solid rgb(210,216,225);
+   border-top: 1px solid;
 }
 h2, h4{
    text-transform: uppercase;
