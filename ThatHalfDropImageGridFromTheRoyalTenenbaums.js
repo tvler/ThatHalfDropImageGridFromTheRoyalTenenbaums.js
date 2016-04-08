@@ -24,13 +24,13 @@ _halfdrop.defaultValues = {
 
 // initializing and first update
 //
-_halfdrop.init = function(){
+_halfdrop.init = function() {
 
    _halfdrop.elems     = document.querySelectorAll('[data-halfdrop]');
    _halfdrop.imgs      = [];
    _halfdrop.settings  = [];
 
-   for(var j=0; j<this.elems.length; j++){
+   for (var j=0; j<this.elems.length; j++) {
 
       // local vars
       //
@@ -48,30 +48,30 @@ _halfdrop.init = function(){
 
       // ** if elemSettings is blank, get image from .style or .getComputedStyle
       // **
-         if(!elemSettings){
+         if (!elemSettings) {
             defVals.maxWidth = defVals.maxHeight = '100%';
             settings[j]      = this.extend( defVals, {} );
          }
 
          // ** if an attribute is a JSON object
          // **
-         else if(elemSettings[0] === '{'){
+         else if (elemSettings[0] === '{') {
             elemSettings = JSON.parse(elemSettings);
 
             // if ANY dimension properties have been set,
             // REMOVE the default max width/height from the temporary clone of defaultValues
             //
-            if(elemSettings.minWidth || elemSettings.maxWidth || elemSettings.width ||
+            if (elemSettings.minWidth || elemSettings.maxWidth || elemSettings.width ||
                elemSettings.minHeight || elemSettings.maxHeight || elemSettings.height ||
                elemSettings.snap) {
 
                // override the default maxWidth and maxHeight values
                // ONLY if they haven't been manually set as default values
                //
-               if(defVals.maxWidth  === -1) defVals.maxWidth  = 0;
-               if(defVals.maxHeight === -1) defVals.maxHeight = 0;
+               if (defVals.maxWidth  === -1) defVals.maxWidth  = 0;
+               if (defVals.maxHeight === -1) defVals.maxHeight = 0;
             }
-            else{
+            else {
                // the max width/height are set to -1 initially because
                // if the global default value of maxWidth or maxHeight is manually set to "100%",
                // that would be ignored and treated like nothing was manually set by the user :(
@@ -84,7 +84,7 @@ _halfdrop.init = function(){
 
       // ** else, the attribute data is only the image file
       // **
-         else{
+         else {
             defVals.maxWidth = defVals.maxHeight = '100%';
             settings[j] = this.extend( defVals, {} );
             settings[j].src = elemSettings;
@@ -95,10 +95,10 @@ _halfdrop.init = function(){
 
       // if the src isn't given, inherit from inline or css
       //
-      if(!settings[j].src){
+      if (!settings[j].src) {
          settings[j].src  = (elem.style.backgroundImage || window.getComputedStyle(elem, null).backgroundImage);
 
-         // replacing that url('') syntax madness
+         // replacing that url('') css syntax madness
          //
          settings[j].src = settings[j].src.replace('url(','').replace(')','').replace("'","").replace('"','').replace("'","").replace('"','');
 
@@ -107,7 +107,7 @@ _halfdrop.init = function(){
 
       // checking if natural image ratio will be kept
       //
-      if(settings[j].width && settings[j].height){
+      if (settings[j].width && settings[j].height) {
          settings[j].keepRatio = false;
       }
 
@@ -122,15 +122,15 @@ _halfdrop.init = function(){
 
 // updating image positions
 //
-_halfdrop.update = function(){
-   for(var j=0; j<_halfdrop.elems.length; j++){
+_halfdrop.update = function() {
+   for(var j = 0; j < _halfdrop.elems.length; j++) {
       _halfdrop.imgs[j].onload();
    }
 }
 
 // painting an element's background
 //
-_halfdrop.paintBack = function(){
+_halfdrop.paintBack = function() {
 
    // locar vars
    //
@@ -147,7 +147,7 @@ _halfdrop.paintBack = function(){
 
    // DON'T RUN THIS FUNCTION IF THE ELEMENT WIDTH AND HEIGHT ARE THE SAME AS LAST TIME
    //
-   if(settings.oldWidth && settings.oldWidth === elemW && settings.oldHeight === elemH){
+   if (settings.oldWidth && settings.oldWidth === elemW && settings.oldHeight === elemH) {
       return;
    }
 
@@ -156,7 +156,7 @@ _halfdrop.paintBack = function(){
 
    // setting ratio for the first time
    //
-   if(!settings.ratio){
+   if (!settings.ratio) {
       settings.ratio = this.width / this.height;
    }
 
@@ -166,28 +166,28 @@ _halfdrop.paintBack = function(){
    // ** if the ratio is being kept
    // ** aka if width XOR height has been declared
    // **
-      if(settings.keepRatio){
-         if(settings.width){
+      if (settings.keepRatio) {
+         if (settings.width) {
             imgW = _halfdrop.parseInput(settings.width, elemW);
             imgH = imgW / settings.ratio;
          }
-         else if(settings.height){
+         else if (settings.height) {
             imgH = _halfdrop.parseInput(settings.height, elemH);
             imgW = imgH * settings.ratio;
          }
-         if(settings.minWidth && imgW < (size = _halfdrop.parseInput(settings.minWidth, elemW))){
+         if (settings.minWidth && imgW < (size = _halfdrop.parseInput(settings.minWidth, elemW))) {
             imgW = size;
             imgH = imgW / settings.ratio;
          }
-         if(settings.minHeight && imgH < (size = _halfdrop.parseInput(settings.minHeight, elemH))){
+         if (settings.minHeight && imgH < (size = _halfdrop.parseInput(settings.minHeight, elemH))) {
             imgH = size;
             imgW = imgH * settings.ratio;
          }
-         if(settings.maxWidth && imgW > (size = _halfdrop.parseInput(settings.maxWidth, elemW))){
+         if (settings.maxWidth && imgW > (size = _halfdrop.parseInput(settings.maxWidth, elemW))) {
             imgW = size;
             imgH = imgW / settings.ratio;
          }
-         if(settings.maxHeight && imgH > (size = _halfdrop.parseInput(settings.maxHeight, elemH))){
+         if (settings.maxHeight && imgH > (size = _halfdrop.parseInput(settings.maxHeight, elemH))) {
             imgH = size;
             imgW = imgH * settings.ratio;
          }
@@ -196,77 +196,77 @@ _halfdrop.paintBack = function(){
    // ** if the ratio is NOT being kept
    // ** aka if width AND height has been declared
    // **
-      else{
+      else {
          imgW = _halfdrop.parseInput(settings.width, elemW);
          imgH = _halfdrop.parseInput(settings.height, elemH);
-         if(settings.minWidth && imgW < (size = _halfdrop.parseInput(settings.minWidth, elemW))){
+         if (settings.minWidth && imgW < (size = _halfdrop.parseInput(settings.minWidth, elemW))) {
             imgW = size;
          }
-         if(settings.minHeight && imgH < (size = _halfdrop.parseInput(settings.minHeight, elemH))){
+         if (settings.minHeight && imgH < (size = _halfdrop.parseInput(settings.minHeight, elemH))) {
             imgH = size;
          }
-         if(settings.maxWidth && imgW > (size = _halfdrop.parseInput(settings.maxWidth, elemW))){
+         if (settings.maxWidth && imgW > (size = _halfdrop.parseInput(settings.maxWidth, elemW))) {
             imgW = size;
          }
-         if(settings.maxHeight && imgH > (size = _halfdrop.parseInput(settings.maxHeight, elemH))){
+         if (settings.maxHeight && imgH > (size = _halfdrop.parseInput(settings.maxHeight, elemH))) {
             imgH = size;
          }
       }
 
    // ** snapping to column width
    // **
-      if(settings.snap){
+      if (settings.snap) {
 
          // if both max width/height are set, choose the smallest constraint
          //
-         if(settings.maxWidth && settings.maxHeight){
+         if (settings.maxWidth && settings.maxHeight) {
             var snapWidth = Math.min(_halfdrop.parseInput(settings.maxWidth, elemW), _halfdrop.parseInput(settings.maxHeight, elemH) * settings.ratio);
             var floorOrCeil = Math.ceil;
          }
 
          // if max width is set
          //
-         else if(settings.maxWidth){
+         else if (settings.maxWidth) {
             var snapWidth = _halfdrop.parseInput(settings.maxWidth, elemW);
             var floorOrCeil = Math.ceil;
          }
 
          //if max height is set
          //
-         else if(settings.maxHeight){
+         else if (settings.maxHeight) {
             var snapWidth   = _halfdrop.parseInput(settings.maxHeight, elemH) * settings.ratio;
             var floorOrCeil = Math.ceil;
          }
 
          // if both min width/height are set, choose the largest constraint
          //
-         else if(settings.minWidth && settings.minHeight){
+         else if (settings.minWidth && settings.minHeight) {
             var snapWidth   = Math.max(_halfdrop.parseInput(settings.minWidth, elemW), _halfdrop.parseInput(settings.minHeight, elemH) * settings.ratio);
             var floorOrCeil = Math.floor;
          }
 
          // if min width is set
          //
-         else if(settings.minWidth){
+         else if (settings.minWidth) {
             var snapWidth   = _halfdrop.parseInput(settings.minWidth, elemW);
             var floorOrCeil = Math.floor;
          }
 
          // if min height is set
          //
-         else if(settings.minHeight){
+         else if (settings.minHeight) {
             var snapWidth   = _halfdrop.parseInput(settings.minHeight, elemH) * settings.ratio;
             var floorOrCeil = Math.floor;
          }
 
          // if nothing's set, just create a 3 column grid :(
          //
-         else{
+         else {
             var snapWidth   = elemW / 3;
             var floorOrCeil = Math.ceil;
          }
          var snapRows = floorOrCeil((elemW / snapWidth - 1) / 2) * 2 + 1;
-         if(snapRows < 3) snapRows = 3;
+         if (snapRows < 3) snapRows = 3;
          imgW = elemW / snapRows;
          imgH = imgW / settings.ratio;
       }
@@ -290,7 +290,7 @@ _halfdrop.paintBack = function(){
 
    // the painting!!!!!!!!!!!!
    //
-   while(i <= amount){
+   while (i <= amount) {
       place = 'px ' + (elemH/2)+'px' + vert;
       style += url+(center + i * imgW)+place + url+(center - i * imgW)+place;
       i += 2;
@@ -344,33 +344,33 @@ _halfdrop.extend = function () {
    return extended;
 }
 
-_halfdrop.parseInput = function(inp, elemDim){
+_halfdrop.parseInput = function(inp, elemDim) {
    var num;
 
    // if there is a unit at the end of the inp string
    //
-   if(isNaN(inp)){
+   if (isNaN(inp)) {
       num =  parseFloat(inp);
 
       // if unit is a percentage
       //
-      if( ( inp.match(/(%|px)$/)||["px"] ) [0] === '%'){
+      if ( ( inp.match(/(%|px)$/)||["px"] ) [0] === '%') {
          num *= elemDim / 100;
       }
    }
 
    // else, if the value is just a number then don't do anything
-   else{
+   else {
       num = inp;
    }
 
    return num;
 }
 
-if(document.readyState !== 'loading'){
+if (document.readyState !== 'loading') {
    _halfdrop.init();
 }
-else{
+else {
    document.addEventListener("DOMContentLoaded", function() {
       _halfdrop.init();
    });
