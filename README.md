@@ -17,8 +17,8 @@ A brand-new JavaScript file for repeating an HTML element's background image in 
 ##### 2. HTML + CSS URL
 
 ```css
-figure{
-  background:url('wes1.jpg')
+figure {
+  background: url('wes1.jpg')
 }
 ```
 ```html
@@ -59,9 +59,7 @@ _halfdrop.defaultValues = {
 ##2 Steps To Run
 ##### 1. Link the javascript file
 ```html
-<script
-  src="ThatHalfDropImageGridFromTheRoyalTenenbaums.js"
-></script>
+<script src="ThatHalfDropImageGridFromTheRoyalTenenbaums.js"></script>
 ```
 *This creates the object ```_halfdrop```*
 ##### 2. Set an event to update the background
